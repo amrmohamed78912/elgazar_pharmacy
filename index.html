@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صيدليات الجزار</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>صيدليات الجزار</h1>
+    </header>
+    <main>
+        <div class="medicine-container" id="medicine-container">
+            <!-- يمكن إضافة الأدوية هنا لاحقاً باستخدام لوحة التحكم -->
+        </div>
+        <div class="cart">
+            <h2>سلة المشتريات</h2>
+            <ul id="cart-items"></ul>
+        </div>
+        <button id="admin-button" onclick="showAdminPanel()">دخول المسؤول</button>
+        <div id="admin-panel" style="display: none;">
+            <h2>لوحة تحكم المسؤول</h2>
+            <form id="admin-form">
+                <label for="medicine-name">اسم الدواء:</label>
+                <input type="text" id="medicine-name" required>
+                <label for="medicine-price">السعر:</label>
+                <input type="number" id="medicine-price" required>
+                <label for="medicine-image">اختر صورة الدواء:</label>
+                <input type="file" id="medicine-image" accept="image/*" required>
+                <button type="button" onclick="addMedicine()">أضف الدواء</button>
+            </form>
+            <div>
+                <h3>تعديل / حذف الأدوية</h3>
+                <form id="edit-form">
+                    <label for="edit-medicine-name">اسم الدواء للتعديل / الحذف:</label>
+                    <input type="text" id="edit-medicine-name" required>
+                    <button type="button" onclick="editMedicine()">تعديل</button>
+                    <button type="button" onclick="removeMedicine()">حذف</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
